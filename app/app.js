@@ -1,15 +1,22 @@
-'use strict';
-
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('ecom', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.view3',
-  'myApp.view4',
-  'myApp.view5',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+  'ecom.view1',
+  'ecom.view2'
+])
+
+.config(['$routeProvider', function ($routeProvider) {
+  $routeProvider
+  .otherwise({redirectTo: '/view2'})
+}])
+
+.directive('myPods', function() {
+  return {
+    templateUrl: '/app/directives/pods.html'
+  };
+})
+
+.directive('myCarousel', function() {
+  return {
+    templateUrl: '/app/directives/carousel.html'
+  };
+})
